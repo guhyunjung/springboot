@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</head>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btn_insert").click(function() {
+            document.location.href = "/add";
+        });
+    });
+</script>
+
+<body>
+<h1>Hello, the for USER!</h1>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <button type="button" id="btn_insert" class="btn btn-default">회원가입</button>
+                </div>
+                <div class="form-group">
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th><label><input type="checkbox" class="minimal-red"/></label></th>
+                                <th>번호</th>
+                                <th>아이디</th>
+                                <th>실명</th>
+                                <th>닉네임</th>
+                                <th>이메일</th>
+                                <th>레벨</th>
+                                <th>포인트</th>
+                                <th>가입일</th>
+                                <th>수정일</th>
+                                <th>홈페이지</th>
+                                <th>핸드폰</th>
+                                <th>생년월일</th>
+                            </tr>
+
+                            <tr th:each="rt : ${result}">
+                                <td><label><input type="checkbox" class="minimal"/></label></td>
+                                <td th:text="${rt.seq}">번호</td>
+                                <td th:text="${rt.userId}">아이디</td>
+                                <td th:text="${rt.name}">실명</td>
+                                <td th:text="${rt.nickname}">닉네임</td>
+                                <td th:text="${rt.email}">이메일</td>
+                                <td th:text="${rt.level}">레벨</td>
+                                <td th:text="${rt.point}">포인트</td>
+                                <td th:text="${rt.regDate}">가입일</td>
+                                <td th:text="${rt.uptDate}">수정일</td>
+                                <td th:text="${rt.homepage}">홈페이지</td>
+                                <td th:text="${rt.phone}">핸드폰</td>
+                                <td th:text="${rt.birthday}">생년월일</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+
+<a style="color: blue" th:href="@{/}">Home</a>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out" />
+</form>
+</body>
+</html>

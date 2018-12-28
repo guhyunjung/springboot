@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome Security with Spring Boot!</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</head>
+<body class="container" style="margin:50px">
+<div class="row col-sm-6" style="border: 1px ridge #003312; padding:20px; float: none; margin: 0 auto;">
+    <h5 class="text-center" style="font-size: 25px">JOIN</h5>
+    <form th:action="@{/addproc}" method="post">
+        <div class="form-group">
+            <label for="userId">userId: </label>
+            <input type="text" class="form-control" id="userId" name="userId"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" class="form-control" id="password" name="password"/>
+        </div>
+        <div class="form-group">
+            <label for="email">email: </label>
+            <input type="text" class="form-control" id="email" name="email"/>
+        </div>
+        <div class="form-group">
+            <label for="name">name: </label>
+            <input type="text" class="form-control" id="name" name="name"/>
+        </div>
+        <div class="form-group">
+            <label for="nickname">nickname: </label>
+            <input type="text" class="form-control" id="nickname" name="nickname"/>
+        </div>
+        <div class="form-group">
+            <label for="level">level: </label>
+            <input type="text" class="form-control" id="level" name="level"/>
+        </div>
+        <div class="form-group">
+            <label for="point">point: </label>
+            <input type="text" class="form-control" id="point" name="point"/>
+        </div>
+        <div class="form-group">
+            <label for="homepage">homepage: </label>
+            <input type="text" class="form-control" id="homepage" name="homepage"/>
+        </div>
+        <div class="form-group">
+            <label for="birthday">birthday: </label>
+            <input type="text" class="form-control" id="birthday" name="birthday"/>
+        </div>
+        <div class="form-group">
+            <label for="regDate">regDate: </label>
+            <input type="text" class="form-control" id="regDate" name="regDate"/>
+        </div>
+        <div class="form-group">
+            <label for="uptDate">uptDate: </label>
+            <input type="text" class="form-control" id="uptDate" name="uptDate"/>
+        </div>
+        <div class="form-group">
+            <label for="loginIp">loginIp: </label>
+            <input type="text" class="form-control" id="loginIp" name="loginIp"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+</div>
+</body>
+</html>
